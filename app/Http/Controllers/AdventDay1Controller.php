@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 class AdventDay1Controller extends Controller
 {
+    /**
+     * Logique de l'exercice du Jour 1
+     */
     public function index()
     {
         // Lire le contenu du fichier
@@ -38,6 +41,10 @@ class AdventDay1Controller extends Controller
         return "La distance totale est : " . $totalDistance . "\nLe score de similarité est : " . $similarityScore;
     }
 
+    /**
+     * Logique de test du Jour 1
+     * @return void
+     */
     public function test()
     {
         // Logique pour les tests du jour 1
@@ -49,6 +56,13 @@ class AdventDay1Controller extends Controller
 
         echo "La distance totale est : " . $totalDistance . "\n";
     }
+
+    /**
+     * Fonction de calcul de la distance entre les chiffres de 2 listes
+     * @param $list1
+     * @param $list2
+     * @return float|int
+     */
     function calculateTotalDistance($list1, $list2)
     {
         // Trier les deux listes
@@ -66,6 +80,12 @@ class AdventDay1Controller extends Controller
         return $totalDistance;
     }
 
+    /**
+     * fonction de calcul du score de similarité
+     * @param $list1
+     * @param $list2
+     * @return float|int
+     */
     private function calculateSimilarityScore($list1, $list2)
     {
         // Compter les occurrences de chaque numéro dans la liste de droite

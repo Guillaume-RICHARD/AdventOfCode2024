@@ -15,6 +15,10 @@ class RunAdventOfCode extends Command
         parent::__construct();
     }
 
+    /**
+     * Commande lançant les exercices (ou les tests) selon le jour précisé
+     * @return void
+     */
     public function handle()
     {
         $day = $this->argument('day');
@@ -29,6 +33,9 @@ class RunAdventOfCode extends Command
         }
     }
 
+    /*
+     * Lance l'exercice du jour
+     */
     protected function callExerciseController($day)
     {
         $controller = 'App\Http\Controllers\AdventDay'.$day.'Controller';
@@ -39,6 +46,9 @@ class RunAdventOfCode extends Command
         }
     }
 
+    /*
+     * lance le test du jour
+     */
     protected function callTestController($day)
     {
         $controller = 'App\Http\Controllers\AdventDay'.$day.'Controller';
